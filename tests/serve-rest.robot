@@ -1,3 +1,4 @@
+Language: Brazilian Portuguese
 *** Settings ***
 Resource     ../resources/serve-rest.resource
 Suite Setup  Cadastrar usuário e logar 
