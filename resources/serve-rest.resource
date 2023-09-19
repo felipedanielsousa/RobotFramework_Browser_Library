@@ -2,7 +2,7 @@
 Library    Browser
 ...        timeout=00:00:05  #setando de espera por elemento(padrão 10s)
 #...        enable_presenter_mode=${true}  #Caso o valor seja true, irá executar de forma lenta e destacar o seletor em uso 
-Library    FakerLibrary
+Library    FakerLibrary    locale=pt_BR
 Library    Screenshot
 Library    DateTime
 
@@ -26,7 +26,7 @@ Abrir o site serve rest
     ${title}    Get Title  ==  Front - ServeRest 
 Preencher dados do novo usuario e clicar em cadastrar
     Click                css=a[data-testid='cadastrar']
-    ${USER_NAME}=        FakerLibrary.User Name
+    ${USER_NAME}=        FakerLibrary.cpf
     Set Test Variable    ${USER_NAME}
     Fill Text            css=input[data-testid='nome']     ${USER_NAME}    
       
@@ -124,4 +124,4 @@ Abrir o site serve rest front logado
     ...            storageState=${STORAGE_FILE}
     New Page       url=https://front.serverest.dev/admin/home
     Get Text       h1  ==  Bem Vindo ${nome}
-    Take Screenshot             
+    Take Screenshot       
