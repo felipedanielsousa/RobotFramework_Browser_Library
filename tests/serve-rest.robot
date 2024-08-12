@@ -1,7 +1,8 @@
 Language: Brazilian Portuguese
 *** Settings ***
-Resource     ../resources/serve-rest.resource
-Suite Setup  Cadastrar usuário e logar 
+Resource        ../resources/serve-rest.resource
+Suite Setup     Cadastrar usuário e logar 
+Suite Teardown  Close Browser  ALL
 *** Test Cases ***
 Login com sucesso server rest front
     Abrir o navegador
